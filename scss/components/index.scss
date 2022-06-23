@@ -4,7 +4,7 @@ body{
     height: auto;
     font-size: 0.75rem;
     header{
-        position: fixed;
+        position: absolute;
         width: 100%;
         padding-left: 250px;
         display: flex;
@@ -16,6 +16,11 @@ body{
             margin-left: 18px;
             .listItem{
                 margin: 0 18px 0 0 ;
+                transition: all 0.2s ease;
+                cursor: pointer;
+                &:hover{
+                    color: $button-color
+                }
             }
             .active{
                 color: $button-color;
@@ -27,6 +32,7 @@ body{
             padding: 9px 18px;
             display: inherit;
             justify-content: space-between;
+            border: 1px solid white;
             img{
                 filter: $filter-white;
                 margin-right: 6px;
@@ -78,9 +84,19 @@ body{
             .navListItem{
                 margin: 0 0 4px 0;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                transition: all 0.2s ease;
                 img{
                     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
                     margin: 0 10px 0 0;
+                    transition: all 0.2s ease;
+                }
+                &:hover{
+                    color: $button-color;
+                    img{
+                        filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                    }
                 }
             }
             .active{
@@ -96,6 +112,7 @@ body{
             }
         }
         .playingOnDevice{
+            cursor: pointer;
             padding: 0 35px 0 0;
             .deviceName{
                 display: flex;
@@ -121,19 +138,430 @@ body{
                 justify-content: center;
                 align-items: center;
                 padding: 4px 0;
+                p{
+                    transition: all 0.3s ease;
+                }
                 img{
                     filter: $filter-white;
                     margin: 0 6px 0 0;
+                    transition: all 0.2s ease;
+                }
+                &:hover{
+                    img{
+                        filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                    }
+                    p{
+                        color: $button-color;
+                    }
                 }
             }
         }
     }
     main{
         margin: 0 0 0 250px;
-        height: 100vh;
-        background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0)), url('../img/metallica.jpg');
+        padding: 80px 0 18px 18px;
+        height: 100%;
+        background-image: linear-gradient(rgba(0,0,0,1), rgba(24, 24, 29, 0.5)), url('../img/metallica2.jpg');
         background-size: cover;
-        width: 100%;
+        background-position: top;
+        .trending{
+            font-size: 0.75rem;
+            margin: 0 0 20px 0;
+        }
+        .trendingTitle{
+            font-size: 3rem;
+            font-weight: 700;
+            padding: 0 0 0 15px;
+            line-height: 50px;
+        }   
+        .authorAndPlays{
+            display: flex;
+            padding: 0 0 0 15px;
+            margin: 0 0 20px 0;
+            .trendingBand{
+                margin: 0 12px 0 0;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            .trendingPlays{
+                color: #ccc;
+            }
+        }
+        .trendingButtons{
+            padding: 0 0 0 15px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            .listenNow{
+                padding: 10px 20px;
+                background-color: $button-color;
+                border-radius: 35px;
+                font-weight: 600;
+                color: white;
+                cursor: pointer;
+                border: none;
+                transition: all 0.3s ease;
+                &:hover{
+                    background-color: rgb(36, 36, 198);
+                }
+            }
+            .heartContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid white;
+                border-radius: 50%;
+                margin-left: 15px;
+                cursor: pointer;
+                img{
+                    filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                    width: 32px;
+                    padding: 8px;
+                }
+            }
+        }
+        .mainContainer{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 25% 40% 28%;
+            gap: 15px;
+            margin-top: 20px;
+            .container1{
+                background-color: $bg-color2;
+                border-radius: 5px;
+                grid-column: 1 / span 2;
+                height: 170px;
+                .topArtists{
+                    margin: 18px;
+                    display: flex;
+                    justify-content: space-between;
+                    p{
+                        transition: all 0.3s ease;
+                        &:nth-child(2){
+                            cursor: pointer;
+                            &:hover{
+                                color: $button-color;
+                            }
+                        }
+                    }
+                }
+                .artists{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 18px;
+                    cursor: pointer;
+                    .artist{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .artistName{
+                            text-align: center;
+                        }
+                        img{
+                            width: 60px;
+                            height: 60px;
+                            object-fit: cover;
+                            border-radius: 10px;
+                            transition: all 0.4s ease;
+                        }
+                        .artistsPlays{
+                            font-size: 0.65rem;
+                            color: #ccc;
+                        }
+                        &:hover{
+                            img{
+                                transform: scale(1.05);
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+            .container2{
+                background-color: $bg-color2;
+                grid-row: 1 / span 2;
+                grid-column: 3;
+                border-radius: 5px;
+                .playerTitle{
+                    padding: 18px 18px 0 18px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    img{
+                        filter: $filter-white;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        &:hover{
+                            filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                        }
+                    }
+                }
+                .playerMusic{
+                    padding: 10px 18px 10px 18px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .playerSongName{
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                    }
+                    .playerSongArtist{
+                        color: #ccc;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    .playerSongPlaylist{
+                        font-size: 0.6rem;
+                        color: #ccc;
+                        margin-bottom: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    img{
+                        width: 150px;
+                        height: 150px;
+                        object-fit: cover;
+                        margin-bottom: 10px;
+                    }
+                    .playerDuration{
+                        display: flex;
+                        justify-content: space-between;
+                        .pastMinutes{
+                            margin-right: 6px;
+                        }
+                        .lastMinutes{
+                            margin-left: 6px;
+                        }
+                        input{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .playerControls{
+                    background-color: $button-color;
+                    height: auto;
+                    .controls{
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        padding: 20px 0 13px 0;
+                        img{
+                            filter: $filter-white;
+                            width: 20px;
+                            cursor: pointer;
+                        }
+                        .playControl{
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 15px;
+                            background-color: white;
+                            border-radius: 10px;
+                            .playIconControl{
+                                filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                            }
+                        }
+                    }
+                    .lyrics{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        img{
+                            filter: $filter-white;
+                            transition: all 0.3s ease;
+                        }
+                        p{
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            padding-bottom: 6px;
+                        }
+                        &:hover{
+                            img{
+                                transform: translateY(-4px);
+                            }
+                        }
+                    }
+                }
+            }
+            .container3{
+                background-color: $bg-color2;
+                height: auto;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                padding: 18px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                .genresTitle{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    p{
+                        transition: all 0.3s ease;
+                        &:nth-child(2){
+                            cursor: pointer;
+                            &:hover{
+                                color: $button-color;
+                            }
+                        }
+                    }
+                }
+                .genres1{
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    .genre1_one{
+                        padding: 6px 0;
+                        text-align: center;
+                        background-color: $secundary-color;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+                    .genre1_two{
+                        padding: 6px 0;
+                        text-align: center;
+                        background-color: $secundary-color2;
+                        border-radius: 10px;
+                        cursor: pointer;
 
+                    }
+                }
+                .genres2{
+                    display: grid;
+                    grid-template-columns: 65% 35%;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    .genre2_one{
+                        padding: 6px 0;
+                        text-align: center;
+                        background-color: $secundary-color3;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+                    .genre2_two{
+                        padding: 6px 0;
+                        text-align: center;
+                        background-color: $secundary-color4;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+                }
+                .genres3{
+                    display: grid;
+                    grid-template-columns: 35% 65%;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    .genre3_one{
+                        padding: 6px 0;
+                        text-align: center;
+                        background-color: $secundary-color5;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+                    .genre3_two{
+                        padding: 6px 0;
+                        text-align: center;
+                        background-color: $secundary-color6;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .container4{
+                background-color: $bg-color2;
+                height: auto;
+                border-radius: 5px;
+                padding: 18px;
+                .topChartsTitle{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    p{
+                        transition: all 0.3s ease;
+                        &:nth-child(2){
+                            cursor: pointer;
+                            &:hover{
+                                color: $button-color;
+                            }
+                        }
+                    }
+                }
+                .song{
+                    display: grid;
+                    grid-template-columns: 5% 15% 50% 10% 10% 10%;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    .songNumber{
+                        text-align: center;
+                    }
+                    .img{
+                        display: flex;
+                        justify-content: center;
+                        img{
+                            width: 35px;
+                            height: 35px;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
+                    }
+                    .songDuration{
+                        text-align: center;
+                    }
+                    .songArtistName{
+                        .artistName{
+                            font-size: 0.65rem;
+                            color: #ccc;
+                            cursor: pointer;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    .playIcon{
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: center;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        padding: 4px;
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                        img{
+                            filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                        }
+                    }
+                    .addToPlaylistIcon{
+                        display: flex;
+                        justify-content: center;
+                        cursor: pointer;
+                        img{
+                            width: 20px;
+                            height: 20px;
+                            filter: invert(90%) sepia(8%) saturate(122%) hue-rotate(164deg) brightness(80%) contrast(91%);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
