@@ -1,0 +1,139 @@
+body{
+    background-color: black;
+    color: white;
+    height: auto;
+    font-size: 0.75rem;
+    header{
+        position: fixed;
+        width: 100%;
+        padding-left: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        .headerList{
+            display: inherit;
+            margin-left: 18px;
+            .listItem{
+                margin: 0 18px 0 0 ;
+            }
+            .active{
+                color: $button-color;
+            }
+        }
+        .searchBar{
+            background-color: rgb(48, 48, 48);
+            border-radius: 10px;
+            padding: 9px 18px;
+            display: inherit;
+            justify-content: space-between;
+            img{
+                filter: $filter-white;
+                margin-right: 6px;
+            }
+            .searchText{
+                font-size: 0.65rem;
+            }
+        }
+        .profileSection{
+            display: inherit;
+            .headerIcons{
+                cursor: pointer;
+                margin: 0 12px 0 0;
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+            }
+            .profile{
+                cursor: pointer;
+                display: inherit;
+                background-color: rgb(48, 48, 48);
+                justify-content: center;
+                align-items: center;
+                margin: 0 18px 0 0;
+                border-radius: 10px;
+                .profilePhoto{
+                    width: 35px;
+                    height: 35px;
+                    object-fit: cover;
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+                .userName{
+                    padding: 6px 12px;
+                }
+            }
+        }
+    }
+    nav{
+        background-color: $bg-color;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 250px;
+        padding: 10px 0 10px 35px;
+        .navLogo{
+            margin: 18px 0;
+        }
+        .navList{
+            margin: 0 0 35px 0;
+            .navListItem{
+                margin: 0 0 4px 0;
+                cursor: pointer;
+                img{
+                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+                    margin: 0 10px 0 0;
+                }
+            }
+            .active{
+                color: $button-color;
+                border-right: 2px solid $button-color;
+                img{
+                    filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                }
+            }
+            .navListTitle{
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+        }
+        .playingOnDevice{
+            padding: 0 35px 0 0;
+            .deviceName{
+                display: flex;
+                align-items: center;
+                background-color: $bg-color2;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                p{
+                    margin: 0 0 0 12px;
+                }
+                img{
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-top-left-radius: 10px;
+                }
+            }
+            .playingOn{
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+                background-color: $bg-color3;
+                justify-content: center;
+                align-items: center;
+                padding: 4px 0;
+                img{
+                    filter: $filter-white;
+                    margin: 0 6px 0 0;
+                }
+            }
+        }
+    }
+    main{
+        margin: 0 0 0 250px;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0)), url('../img/metallica.jpg');
+        background-size: cover;
+        width: 100%;
+
+    }
+}

@@ -5,3 +5,114 @@
   text-decoration: none;
   list-style: none;
   font-family: "Poppins", sans-serif; }
+
+body {
+  background-color: black;
+  color: white;
+  height: auto;
+  font-size: 0.75rem; }
+  body header {
+    position: fixed;
+    width: 100%;
+    padding-left: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; }
+    body header .headerList {
+      display: inherit;
+      margin-left: 18px; }
+      body header .headerList .listItem {
+        margin: 0 18px 0 0; }
+      body header .headerList .active {
+        color: #5773ff; }
+    body header .searchBar {
+      background-color: #303030;
+      border-radius: 10px;
+      padding: 9px 18px;
+      display: inherit;
+      justify-content: space-between; }
+      body header .searchBar img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+        margin-right: 6px; }
+      body header .searchBar .searchText {
+        font-size: 0.65rem; }
+    body header .profileSection {
+      display: inherit; }
+      body header .profileSection .headerIcons {
+        cursor: pointer;
+        margin: 0 12px 0 0;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%); }
+      body header .profileSection .profile {
+        cursor: pointer;
+        display: inherit;
+        background-color: #303030;
+        justify-content: center;
+        align-items: center;
+        margin: 0 18px 0 0;
+        border-radius: 10px; }
+        body header .profileSection .profile .profilePhoto {
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+          border-bottom-left-radius: 10px;
+          border-top-left-radius: 10px; }
+        body header .profileSection .profile .userName {
+          padding: 6px 12px; }
+  body nav {
+    background-color: #18181d;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 250px;
+    padding: 10px 0 10px 35px; }
+    body nav .navLogo {
+      margin: 18px 0; }
+    body nav .navList {
+      margin: 0 0 35px 0; }
+      body nav .navList .navListItem {
+        margin: 0 0 4px 0;
+        cursor: pointer; }
+        body nav .navList .navListItem img {
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+          margin: 0 10px 0 0; }
+      body nav .navList .active {
+        color: #5773ff;
+        border-right: 2px solid #5773ff; }
+        body nav .navList .active img {
+          filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%); }
+      body nav .navList .navListTitle {
+        text-transform: uppercase;
+        margin-bottom: 15px; }
+    body nav .playingOnDevice {
+      padding: 0 35px 0 0; }
+      body nav .playingOnDevice .deviceName {
+        display: flex;
+        align-items: center;
+        background-color: #202026;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px; }
+        body nav .playingOnDevice .deviceName p {
+          margin: 0 0 0 12px; }
+        body nav .playingOnDevice .deviceName img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-top-left-radius: 10px; }
+      body nav .playingOnDevice .playingOn {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        background-color: #050505;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 0; }
+        body nav .playingOnDevice .playingOn img {
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+          margin: 0 6px 0 0; }
+  body main {
+    margin: 0 0 0 250px;
+    height: 100vh;
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0)), url("../img/metallica.jpg");
+    background-size: cover;
+    width: 100%; }
