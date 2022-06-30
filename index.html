@@ -11,7 +11,7 @@
     <title>Music Player</title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <ul class="headerList">
             <li class="listItem active">MUSIC</li>
             <li class="listItem">PODCAST</li>
@@ -28,9 +28,12 @@
                 <img src="img/profilePhoto.jpg" alt="profile photo" class="profilePhoto">
                 <p class="userName">Julian Lobos</p>
             </div>
+            <div class="hamburgerBtn">
+                <img src="img/bars-solid.svg" alt="hamburgerBtn" id="hamburgerBtn">
+            </div>
         </div>
     </header>
-    <nav>
+    <nav id="nav">
         <div class="navLogo">
             <p>MusicPlayer</p>
         </div>
@@ -67,17 +70,19 @@
             </div>
         </div>
     </nav>
-    <main>
-        <p class="trending">Trending New Hits</p>
-        <p class="trendingTitle">Hardwired</p>
-        <div class="authorAndPlays">
-            <p class="trendingBand">Metallica</p>
-            <p class="trendingPlays">50Million Plays</p>
-        </div>
-        <div class="trendingButtons">
-            <button class="listenNow">Listen Now</button>
-            <div class="heartContainer">
-                <img src="img/icon/heart-fill.svg" alt="heart icon">
+    <main id="main">
+        <div class="recommended">
+            <p class="trending">Trending New Hits</p>
+            <p class="trendingTitle">Hardwired</p>
+            <div class="authorAndPlays">
+                <p class="trendingBand">Metallica</p>
+                <p class="trendingPlays">50Million Plays</p>
+            </div>
+            <div class="trendingButtons">
+                <button class="listenNow">Listen Now</button>
+                <div class="heartContainer">
+                    <img src="img/icon/heart-fill.svg" alt="heart icon">
+                </div>
             </div>
         </div>
         <div class="mainContainer">
@@ -219,5 +224,6 @@
             </div>
         </div>
     </main>
+    <script src="js/script.js"></script>
 </body> 
 </html>

@@ -3,6 +3,7 @@ body{
     color: white;
     height: auto;
     font-size: 0.75rem;
+    height: 100%;
     header{
         position: absolute;
         width: 100%;
@@ -41,6 +42,9 @@ body{
                 font-size: 0.65rem;
             }
         }
+        .hamburgerBtn{
+            display: none;
+        }
         .profileSection{
             display: inherit;
             .headerIcons{
@@ -76,13 +80,16 @@ body{
         top: 0;
         width: 250px;
         padding: 10px 0 10px 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .navLogo{
             margin: 18px 0;
         }
         .navList{
-            margin: 0 0 35px 0;
+            margin: 0 0 10px 0;
             .navListItem{
-                margin: 0 0 4px 0;
+                margin: 8px 0;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
@@ -159,66 +166,72 @@ body{
     }
     main{
         margin: 0 0 0 250px;
-        padding: 80px 0 18px 18px;
-        height: 100%;
-        background-image: linear-gradient(rgba(0,0,0,1), rgba(24, 24, 29, 0.5)), url('../img/metallica2.jpg');
+        padding: 80px 18px 18px 18px;
+        min-height: 100%;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(24, 24, 29, 0.5)), url('../img/metallica2.jpg');
         background-size: cover;
         background-position: top;
-        .trending{
-            font-size: 0.75rem;
-            margin: 0 0 20px 0;
-        }
-        .trendingTitle{
-            font-size: 3rem;
-            font-weight: 700;
-            padding: 0 0 0 15px;
-            line-height: 50px;
-        }   
-        .authorAndPlays{
-            display: flex;
-            padding: 0 0 0 15px;
-            margin: 0 0 20px 0;
-            .trendingBand{
-                margin: 0 12px 0 0;
-                cursor: pointer;
-                &:hover{
-                    text-decoration: underline;
-                }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        .recommended{
+            .trending{
+                font-size: 0.75rem;
+                margin: 0 0 20px 0;
             }
-            .trendingPlays{
-                color: #ccc;
-            }
-        }
-        .trendingButtons{
-            padding: 0 0 0 15px;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            .listenNow{
-                padding: 10px 20px;
-                background-color: $button-color;
-                border-radius: 35px;
-                font-weight: 600;
-                color: white;
-                cursor: pointer;
-                border: none;
-                transition: all 0.3s ease;
-                &:hover{
-                    background-color: rgb(36, 36, 198);
-                }
-            }
-            .heartContainer{
+            .trendingTitle{
+                font-size: 3rem;
+                font-weight: 700;
+                padding: 0 0 0 15px;
+                line-height: 50px;
+            }   
+            .authorAndPlays{
                 display: flex;
-                justify-content: center;
+                padding: 0 0 0 15px;
+                margin: 0 0 20px 0;
+                .trendingBand{
+                    margin: 0 12px 0 0;
+                    cursor: pointer;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                .trendingPlays{
+                    color: #ccc;
+                }
+            }
+            .trendingButtons{
+                padding: 0 0 0 15px;
+                display: flex;
+                justify-content: start;
                 align-items: center;
-                border: 2px solid white;
-                border-radius: 50%;
-                margin-left: 15px;
-                cursor: pointer;
-                img{
-                    filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
-                    width: 32px;
-                    padding: 8px;
+                .listenNow{
+                    padding: 10px 20px;
+                    background-color: $button-color;
+                    border-radius: 35px;
+                    font-weight: 600;
+                    color: white;
+                    cursor: pointer;
+                    border: none;
+                    transition: all 0.3s ease;
+                    &:hover{
+                        background-color: rgb(36, 36, 198);
+                    }
+                }
+                .heartContainer{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    margin-left: 15px;
+                    cursor: pointer;
+                    img{
+                        filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
+                        width: 32px;
+                        padding: 8px;
+                    }
                 }
             }
         }
@@ -256,6 +269,7 @@ body{
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        margin: 0 10px;
                         .artistName{
                             text-align: center;
                         }
@@ -307,6 +321,7 @@ body{
                     .playerSongName{
                         font-size: 1.25rem;
                         font-weight: 600;
+                        text-align: center;
                     }
                     .playerSongArtist{
                         color: #ccc;

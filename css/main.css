@@ -1,3 +1,6 @@
+html {
+  height: 100%; }
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +13,8 @@ body {
   background-color: black;
   color: white;
   height: auto;
-  font-size: 0.75rem; }
+  font-size: 0.75rem;
+  height: 100%; }
   body header {
     position: absolute;
     width: 100%;
@@ -42,6 +46,8 @@ body {
         margin-right: 6px; }
       body header .searchBar .searchText {
         font-size: 0.65rem; }
+    body header .hamburgerBtn {
+      display: none; }
     body header .profileSection {
       display: inherit; }
       body header .profileSection .headerIcons {
@@ -70,13 +76,16 @@ body {
     position: fixed;
     top: 0;
     width: 250px;
-    padding: 10px 0 10px 35px; }
+    padding: 10px 0 10px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
     body nav .navLogo {
       margin: 18px 0; }
     body nav .navList {
-      margin: 0 0 35px 0; }
+      margin: 0 0 10px 0; }
       body nav .navList .navListItem {
-        margin: 0 0 4px 0;
+        margin: 8px 0;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -133,36 +142,40 @@ body {
           color: #5773ff; }
   body main {
     margin: 0 0 0 250px;
-    padding: 80px 0 18px 18px;
-    height: 100%;
-    background-image: linear-gradient(black, rgba(24, 24, 29, 0.5)), url("../img/metallica2.jpg");
+    padding: 80px 18px 18px 18px;
+    min-height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(24, 24, 29, 0.5)), url("../img/metallica2.jpg");
     background-size: cover;
-    background-position: top; }
-    body main .trending {
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease; }
+    body main .recommended .trending {
       font-size: 0.75rem;
       margin: 0 0 20px 0; }
-    body main .trendingTitle {
+    body main .recommended .trendingTitle {
       font-size: 3rem;
       font-weight: 700;
       padding: 0 0 0 15px;
       line-height: 50px; }
-    body main .authorAndPlays {
+    body main .recommended .authorAndPlays {
       display: flex;
       padding: 0 0 0 15px;
       margin: 0 0 20px 0; }
-      body main .authorAndPlays .trendingBand {
+      body main .recommended .authorAndPlays .trendingBand {
         margin: 0 12px 0 0;
         cursor: pointer; }
-        body main .authorAndPlays .trendingBand:hover {
+        body main .recommended .authorAndPlays .trendingBand:hover {
           text-decoration: underline; }
-      body main .authorAndPlays .trendingPlays {
+      body main .recommended .authorAndPlays .trendingPlays {
         color: #ccc; }
-    body main .trendingButtons {
+    body main .recommended .trendingButtons {
       padding: 0 0 0 15px;
       display: flex;
       justify-content: start;
       align-items: center; }
-      body main .trendingButtons .listenNow {
+      body main .recommended .trendingButtons .listenNow {
         padding: 10px 20px;
         background-color: #5773ff;
         border-radius: 35px;
@@ -171,9 +184,9 @@ body {
         cursor: pointer;
         border: none;
         transition: all 0.3s ease; }
-        body main .trendingButtons .listenNow:hover {
+        body main .recommended .trendingButtons .listenNow:hover {
           background-color: #2424c6; }
-      body main .trendingButtons .heartContainer {
+      body main .recommended .trendingButtons .heartContainer {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -181,7 +194,7 @@ body {
         border-radius: 50%;
         margin-left: 15px;
         cursor: pointer; }
-        body main .trendingButtons .heartContainer img {
+        body main .recommended .trendingButtons .heartContainer img {
           filter: invert(39%) sepia(100%) saturate(1801%) hue-rotate(215deg) brightness(99%) contrast(110%);
           width: 32px;
           padding: 8px; }
@@ -214,7 +227,8 @@ body {
           body main .mainContainer .container1 .artists .artist {
             display: flex;
             flex-direction: column;
-            align-items: center; }
+            align-items: center;
+            margin: 0 10px; }
             body main .mainContainer .container1 .artists .artist .artistName {
               text-align: center; }
             body main .mainContainer .container1 .artists .artist img {
@@ -253,7 +267,8 @@ body {
           justify-content: center; }
           body main .mainContainer .container2 .playerMusic .playerSongName {
             font-size: 1.25rem;
-            font-weight: 600; }
+            font-weight: 600;
+            text-align: center; }
           body main .mainContainer .container2 .playerMusic .playerSongArtist {
             color: #ccc;
             cursor: pointer; }
@@ -453,3 +468,95 @@ body {
               width: 20px;
               height: 20px;
               filter: invert(90%) sepia(8%) saturate(122%) hue-rotate(164deg) brightness(80%) contrast(91%); }
+
+@media (max-width: 1100px) {
+  body header {
+    padding-left: 200px; }
+  body nav {
+    width: 200px;
+    padding: 18px 15px; }
+    body nav .playingOnDevice {
+      padding: 0; }
+  body main {
+    margin: 0 0 0 200px; } }
+
+@media (max-width: 1000px) {
+  body header {
+    padding: 0 18px; }
+    body header .hamburgerBtn {
+      display: block;
+      cursor: pointer; }
+      body header .hamburgerBtn img {
+        width: 30px;
+        filter: invert(99%) sepia(1%) saturate(17%) hue-rotate(109deg) brightness(104%) contrast(100%); }
+  body nav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    transition: all 0.3s ease; }
+  body main {
+    margin: 0; } }
+
+@media (max-width: 800px) {
+  body main {
+    padding: 80px 12px 130px 12px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; }
+    body main .mainContainer {
+      grid-template-columns: 100%; }
+      body main .mainContainer .container1 {
+        grid-column: 1; }
+      body main .mainContainer .container2 {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 10; }
+        body main .mainContainer .container2 .playerTitle {
+          display: none; }
+        body main .mainContainer .container2 .playerMusic {
+          display: grid;
+          grid-template-columns: 15% 85%;
+          background-color: #18181d; }
+          body main .mainContainer .container2 .playerMusic img {
+            width: 50px;
+            height: 50px;
+            grid-column: 1;
+            margin: 0;
+            grid-row: 1 / span 2; }
+          body main .mainContainer .container2 .playerMusic .playerSongName, body main .mainContainer .container2 .playerMusic .playerSongArtist {
+            grid-column: 2; }
+          body main .mainContainer .container2 .playerMusic .playerSongName {
+            font-size: 1rem;
+            text-align: start;
+            align-self: end; }
+          body main .mainContainer .container2 .playerMusic .playerSongPlaylist, body main .mainContainer .container2 .playerMusic .playerDuration {
+            display: none; }
+        body main .mainContainer .container2 .playerControls .controls {
+          padding: 5px 0 3px 0; }
+          body main .mainContainer .container2 .playerControls .controls img {
+            width: 12px; }
+        body main .mainContainer .container2 .playerControls .lyrics {
+          display: none; }
+  body main::-webkit-scrollbar {
+    display: none; } }
+
+@media (max-width: 550px) {
+  body header {
+    position: unset; }
+    body header .headerList {
+      display: none; }
+    body header .searchBar {
+      background-color: #202026;
+      padding: 10px; }
+      body header .searchBar .searchText {
+        display: none; }
+      body header .searchBar img {
+        margin: 0; }
+  body main {
+    padding: 24px 12px 130px 12px; }
+    body main .mainContainer .container1 .artists .artist:nth-child(4) {
+      display: none; }
+    body main .mainContainer .container1 .artists .artist:nth-child(2) {
+      display: none; } }

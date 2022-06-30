@@ -1,0 +1,142 @@
+@media (max-width: 1100px){
+    body{
+        header{
+            padding-left: 200px;
+        }
+        nav{
+            width: 200px;
+            padding: 18px 15px;
+            .playingOnDevice{
+                padding: 0;
+            }
+        }
+        main{
+            margin: 0 0 0 200px;
+        }
+    }
+} 
+
+@media (max-width: 1000px){
+    body{
+        header{
+            .hamburgerBtn{
+                display: block;
+                cursor: pointer;
+                img{
+                    width: 30px;
+                    filter: invert(99%) sepia(1%) saturate(17%) hue-rotate(109deg) brightness(104%) contrast(100%);
+                }
+            }
+            padding: 0 18px;
+        }
+        nav{
+            position: fixed;
+            left: -100%;
+            top: 0;
+            transition: all 0.3s ease;
+        }
+        main{
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 800px){
+    body{
+        main{
+            padding: 80px 12px 130px 12px;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            .mainContainer{
+                grid-template-columns: 100%;
+                .container1{
+                    grid-column: 1;
+                }
+                .container2{
+                    position: fixed;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 10;
+                    .playerTitle{
+                        display: none;
+                    }
+                    .playerMusic{
+                        display: grid;
+                        grid-template-columns: 15% 85%;
+                        background-color: $bg-color;
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            grid-column: 1;
+                            margin: 0;
+                            grid-row: 1 / span 2;
+                        }
+                        .playerSongName, .playerSongArtist {
+                            grid-column: 2;
+                        }
+                        .playerSongName{
+                            font-size: 1rem;
+                            text-align: start;
+                            align-self: end;
+                        }
+                        .playerSongPlaylist, .playerDuration{
+                            display: none;
+                        }
+                    }
+                    .playerControls{
+                        .controls{
+                            padding: 5px 0 3px 0;
+                            img{
+                                width: 12px;
+                            }
+                        }
+                        .lyrics{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        main::-webkit-scrollbar {
+            display: none;
+          }
+    }
+} 
+
+@media (max-width: 550px){
+    body{
+        header{
+            position: unset;
+            .headerList{
+                display: none;
+            }
+            .searchBar{
+                background-color: $bg-color2;
+                padding: 10px;
+                .searchText{
+                    display: none;
+                }
+                img{
+                    margin: 0;
+                }
+            }
+        }
+        main{
+            padding: 24px 12px 130px 12px;
+            .mainContainer{
+                .container1{
+                    .artists{
+                        .artist:nth-child(4){
+                            display: none;
+                        }
+                        .artist:nth-child(2){
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
