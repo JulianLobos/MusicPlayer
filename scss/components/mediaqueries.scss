@@ -108,7 +108,7 @@
 @media (max-width: 550px){
     body{
         header{
-            position: unset;
+            position: absolute;
             .headerList{
                 display: none;
             }
@@ -124,7 +124,7 @@
             }
         }
         main{
-            padding: 24px 12px 130px 12px;
+            padding: 82px 12px 130px 12px;
             .mainContainer{
                 .container1{
                     .artists{

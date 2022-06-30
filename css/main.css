@@ -547,7 +547,7 @@ body {
 
 @media (max-width: 550px) {
   body header {
-    position: unset; }
+    position: absolute; }
     body header .headerList {
       display: none; }
     body header .searchBar {
@@ -558,7 +558,7 @@ body {
       body header .searchBar img {
         margin: 0; }
   body main {
-    padding: 24px 12px 130px 12px; }
+    padding: 82px 12px 130px 12px; }
     body main .mainContainer .container1 .artists .artist:nth-child(4) {
       display: none; }
     body main .mainContainer .container1 .artists .artist:nth-child(2) {
